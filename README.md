@@ -1,1 +1,1 @@
-Diana7 for ROS2 packages
+Diana Robots for ROS2 packages
