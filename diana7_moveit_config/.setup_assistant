@@ -1,0 +1,10 @@
+moveit_setup_assistant_config:
+  urdf:
+    package: diana7_description
+    relative_path: urdf/diana7_robot.urdf.xacro
+  srdf:
+    relative_path: config/diana7.srdf
+  package_settings:
+    author_name: ""
+    author_email: ""
+    generated_timestamp: 1782316811
