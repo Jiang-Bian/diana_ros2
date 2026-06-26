@@ -1,0 +1,30 @@
+<?xml version="1.0"?>
+<robot xmlns:xacro="http://ros.org/wiki/xacro">
+
+  <xacro:macro name="diana7_arm_gazebo" params="isCollide:=true">
+
+    <gazebo reference="link1">
+      <selfCollide>${isCollide}</selfCollide>
+    </gazebo>
+    <gazebo reference="link2">
+      <selfCollide>${isCollide}</selfCollide>
+    </gazebo>
+    <gazebo reference="link3">
+      <selfCollide>${isCollide}</selfCollide>
+    </gazebo>
+    <gazebo reference="link4">
+      <selfCollide>${isCollide}</selfCollide>
+    </gazebo>
+    <gazebo reference="link5">
+      <selfCollide>${isCollide}</selfCollide>
+    </gazebo>
+    <gazebo reference="link6">
+      <selfCollide>${isCollide}</selfCollide>
+    </gazebo>
+    <gazebo reference="link7">
+      <selfCollide>${isCollide}</selfCollide>
+    </gazebo>
+
+  </xacro:macro>
+
+</robot>

@@ -1,0 +1,25 @@
+moveit_setup_assistant_config:
+  urdf:
+    package: diana_description
+    relative_path: robots/diana7/diana7_robot.urdf.xacro
+  srdf:
+    relative_path: config/diana7.srdf
+  package_settings:
+    author_name: Agile Robtos SE
+    author_email: none@todo.email
+    generated_timestamp: 1782473396
+  control_xacro:
+    command:
+      - position
+    state:
+      - position
+      - velocity
+  modified_urdf:
+    xacros:
+      - control_xacro
+  control_xacro:
+    command:
+      - position
+    state:
+      - position
+      - velocity
