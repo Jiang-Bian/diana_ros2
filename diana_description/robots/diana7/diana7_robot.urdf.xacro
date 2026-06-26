@@ -16,7 +16,7 @@
 
   <xacro:include filename="$(find diana_description)/robots/diana7/diana7.urdf.xacro"/>
 
-  <!-- <xacro:include filename="$(find diana_description)/robots/diana7/diana7.ros2_control.xacro"/> -->
+  <xacro:include filename="$(find diana_description)/robots/diana7/diana7.ros2_control.xacro"/>
 
   <xacro:include filename="$(find diana_description)/robots/diana7/diana7.gazebo.xacro"/>
 
@@ -35,10 +35,10 @@
 
   <!-- ========= ros2_control ========= -->
 
-  <!-- <xacro:diana7_ros2_control
+  <xacro:diana7_ros2_control
       prefix="${prefix}"
       use_fake_hardware="$(arg use_fake_hardware)"
-      fake_sensor_commands="$(arg fake_sensor_commands)"/> -->
+      fake_sensor_commands="$(arg fake_sensor_commands)"/>
 
   <!-- ========= Gazebo ========= -->
 

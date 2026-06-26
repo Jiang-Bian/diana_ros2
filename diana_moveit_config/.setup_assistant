@@ -7,7 +7,7 @@ moveit_setup_assistant_config:
   package_settings:
     author_name: Agile Robtos SE
     author_email: none@todo.email
-    generated_timestamp: 1782473396
+    generated_timestamp: 1782488794
   control_xacro:
     command:
       - position

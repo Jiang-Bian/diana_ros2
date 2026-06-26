@@ -3,6 +3,7 @@ from launch.actions import DeclareLaunchArgument
 from launch.substitutions import Command
 from launch.substitutions import LaunchConfiguration
 from launch.substitutions import PathJoinSubstitution
+from launch.substitutions import FindExecutable
 
 from launch_ros.actions import Node
 from launch_ros.substitutions import FindPackageShare
@@ -18,7 +19,7 @@ def generate_launch_description():
         DeclareLaunchArgument(
             "prefix",
             default_value="",
-            description="Joint name prefix",
+            description="Prefix for all joint and link names",
         ),
         DeclareLaunchArgument(
             "use_fake_hardware",
@@ -38,13 +39,13 @@ def generate_launch_description():
     ]
 
     #
-    # Robot Description
+    # robot_description
     #
 
     robot_description = {
         "robot_description": Command(
             [
-                "xacro",
+                FindExecutable(name="xacro"),
                 " ",
                 PathJoinSubstitution(
                     [
@@ -71,52 +72,24 @@ def generate_launch_description():
     }
 
     #
-    # Robot State Publisher
+    # robot_state_publisher
     #
 
     robot_state_publisher = Node(
         package="robot_state_publisher",
         executable="robot_state_publisher",
-        parameters=[robot_description],
-        output="screen",
-    )
-
-    #
-    # Joint State Publisher
-    #
-
-    joint_state_publisher = Node(
-        package="joint_state_publisher_gui",
-        executable="joint_state_publisher_gui",
-        output="screen",
-    )
-
-    #
-    # RViz
-    #
-
-    rviz = Node(
-        package="rviz2",
-        executable="rviz2",
-        output="screen",
-        arguments=[
-            "-d",
-            PathJoinSubstitution(
-                [
-                    FindPackageShare("diana_description"),
-                    "rviz",
-                    "diana7.visualize.rviz",
-                ]
-            ),
+        parameters=[
+            robot_description,
+            {
+                "publish_frequency": 100.0,
+            },
         ],
-        parameters=[robot_description],
+        output="screen",
     )
 
     return LaunchDescription(
         declared_arguments
         + [
-            joint_state_publisher,
             robot_state_publisher,
-            rviz,
         ]
     )

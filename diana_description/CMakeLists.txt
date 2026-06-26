@@ -15,6 +15,9 @@ find_package(ament_cmake REQUIRED)
 # Install launch files.
 install(
   DIRECTORY
+    common
+    config
+    end_effectors
     launch
     rviz
     meshes
