@@ -1,0 +1,39 @@
+#pragma once
+
+#include "diana_hardware/hardware_driver.hpp"
+
+namespace diana_hardware
+{
+
+    class FakeHardwareDriver final : public HardwareDriver
+    {
+    public:
+        FakeHardwareDriver() = default;
+        ~FakeHardwareDriver() override = default;
+
+        CallbackReturn configure(
+            const hardware_interface::HardwareInfo &info,
+            const HardwareParameters &parameters,
+            std::vector<double> &position,
+            std::vector<double> &velocity,
+            std::vector<double> &effort,
+            std::vector<double> &command_position,
+            std::vector<double> &command_velocity,
+            std::vector<double> &command_effort) override;
+
+        CallbackReturn activate() override;
+
+        CallbackReturn deactivate() override;
+
+        hardware_interface::return_type read() override;
+
+        hardware_interface::return_type write() override;
+
+    private:
+        bool active_{false};
+
+        /// Maximum joint step (rad) applied each write cycle.
+        double max_position_step_{0.01};
+    };
+
+} // namespace diana_hardware

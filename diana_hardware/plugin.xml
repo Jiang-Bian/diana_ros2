@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<library path="diana_hardware">
+
+    <class
+        name="diana_hardware/DianaSystem"
+        type="diana_hardware::DianaSystem"
+        base_class_type="hardware_interface::SystemInterface">
+
+        <description>
+            ros2_control SystemInterface for Agile Robots Diana series.
+            Supports Fake Hardware and Diana Fast Control Interface (FCI).
+        </description>
+
+    </class>
+
+</library>

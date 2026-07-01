@@ -1,3 +1,5 @@
+<?xml version="1.0"?>
+
 <robot name="diana7" xmlns:xacro="http://www.ros.org/wiki/xacro">
 
   <!-- ========= Arguments ========= -->
@@ -35,10 +37,16 @@
 
   <!-- ========= ros2_control ========= -->
 
-  <xacro:diana7_ros2_control
-      prefix="${prefix}"
-      use_fake_hardware="$(arg use_fake_hardware)"
-      fake_sensor_commands="$(arg fake_sensor_commands)"/>
+<xacro:include filename="$(find diana_description)/robots/diana7/diana7.ros2_control.xacro"/>
+
+<xacro:diana7_ros2_control
+    name="DianaSystem"
+    prefix="${prefix}"
+    use_fake_hardware="${use_fake_hardware}"
+    robot_ip="${robot_ip}"
+    command_port="${command_port}"
+    state_port="${state_port}"
+    control_frequency="${control_frequency}"/>
 
   <!-- ========= Gazebo ========= -->
 

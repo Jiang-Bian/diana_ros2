@@ -1,0 +1,41 @@
+<?xml version="1.0"?>
+<package format="3">
+
+    <name>diana_hardware</name>
+    <version>0.1.0</version>
+
+    <description>
+        ros2_control hardware interface for Agile Diana robots.
+    </description>
+
+    <maintainer email="your@email.com">Agile Robots</maintainer>
+
+    <license>Apache-2.0</license>
+
+    <buildtool_depend>ament_cmake</buildtool_depend>
+
+    <!-- ros2 -->
+    <depend>hardware_interface</depend>
+    <depend>pluginlib</depend>
+    <depend>rclcpp</depend>
+    <depend>rclcpp_lifecycle</depend>
+
+    <test_depend>ament_lint_auto</test_depend>
+    <test_depend>ament_lint_common</test_depend>
+
+    <!-- <build_export_depend>hardware_interface</build_export_depend>
+    <build_export_depend>pluginlib</build_export_depend> -->
+
+    <!-- <exec_depend>hardware_interface</exec_depend>
+    <exec_depend>pluginlib</exec_depend> -->
+
+    <export>
+
+        <build_type>ament_cmake</build_type>
+
+        <hardware_interface
+            plugin="${prefix}/plugin.xml" />
+
+    </export>
+
+</package>
