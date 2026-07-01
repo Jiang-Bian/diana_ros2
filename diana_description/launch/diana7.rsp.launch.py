@@ -52,7 +52,7 @@ def generate_launch_description():
                         FindPackageShare("diana_description"),
                         "robots",
                         "diana7",
-                        "diana7_robot.urdf.xacro",
+                        "diana7.urdf.xacro",
                     ]
                 ),
                 " ",

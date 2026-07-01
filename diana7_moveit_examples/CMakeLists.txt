@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 3.8)
-project(diana_moveit_examples)
+project(diana7_moveit_examples)
 
 if(CMAKE_COMPILER_IS_GNUCXX OR CMAKE_CXX_COMPILER_ID MATCHES "Clang")
   add_compile_options(-Wall -Wextra -Wpedantic)
