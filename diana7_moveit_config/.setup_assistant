@@ -3,8 +3,17 @@ moveit_setup_assistant_config:
     package: diana_description
     relative_path: robots/diana7/diana7.urdf.xacro
   srdf:
-    relative_path: config/diana7.srdf.xacro
+    relative_path: config/diana7.srdf
   package_settings:
-    author_name: Agile Robtos SE
+    author_name: Agile Robots SE
     author_email: none@todo.email
-    generated_timestamp: 1782834794
+    generated_timestamp: 1783008085
+  control_xacro:
+    command:
+      - position
+    state:
+      - position
+      - velocity
+  modified_urdf:
+    xacros:
+      - control_xacro

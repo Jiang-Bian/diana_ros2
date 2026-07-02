@@ -1,10 +1,10 @@
-#include "diana_hardware/fci_hardware_driver.hpp"
+#include "diana_hardware/fake_hardware_driver.hpp"
 
 namespace diana_hardware
 {
 
     CallbackReturn
-    FCIHardwareDriver::configure(
+    FakeHardwareDriver::configure(
         const hardware_interface::HardwareInfo &info,
         const HardwareParameters &parameters,
         std::vector<double> &position,
@@ -33,7 +33,7 @@ namespace diana_hardware
     }
 
     CallbackReturn
-    FCIHardwareDriver::activate()
+    FakeHardwareDriver::activate()
     {
         active_ = true;
 
@@ -44,7 +44,7 @@ namespace diana_hardware
     }
 
     CallbackReturn
-    FCIHardwareDriver::deactivate()
+    FakeHardwareDriver::deactivate()
     {
         active_ = false;
 
@@ -55,7 +55,7 @@ namespace diana_hardware
     }
 
     hardware_interface::return_type
-    FCIHardwareDriver::read()
+    FakeHardwareDriver::read()
     {
         if (!active_)
         {
@@ -73,7 +73,7 @@ namespace diana_hardware
     }
 
     hardware_interface::return_type
-    FCIHardwareDriver::write()
+    FakeHardwareDriver::write()
     {
         if (!active_)
         {
