@@ -1,0 +1,3 @@
+controllers:
+  - joint_state_broadcaster
+  - diana_arm_controller
